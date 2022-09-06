@@ -49,6 +49,7 @@ pertenece :: Int -> [Int] -> Bool
 pertenece y [] = False
 pertenece y (x:xs) = (x == y) || pertenece y xs
 
+
 {- [4] Programá las siguientes funciones que implementan los cuantificadores generales. Notá que el segundo parámetro de cada 
 función, es otra función.
 (a) paratodo' :: [a] -> (a -> Bool) -> Bool, dada una lista xs de tipo [a] y un predicado t :: a -> Bool, determina si 
@@ -80,6 +81,7 @@ productoria' (x:xs) t = (t x) * productoria' xs t
 paraTodo'' :: [Bool] -> Bool
 paraTodo'' xs = paraTodo' xs id
          
+
 {- [6] Utilizando las funciones del ejercicio 4, programá las siguientes funciones por composición, sin usar recursión ni análisis por casos.
 (a) todosPares :: [Int] -> Bool, verifica que todos los números de una lista sean pares. -}
 todosPares :: [Int] -> Bool
