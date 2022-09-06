@@ -119,16 +119,31 @@ multiplicaPares :: [Int] -> Int
 multiplicaPares (x:xs) = productoria' (x:xs) esPar
 
 
+{- [7] Indagá en Hoogle sobre las funciones map y filter. También podés consultar su tipo en ghci con el comando :t.
+(a) ¿Qué hacen estas funciones?
+(b) ¿A qué equivale la expresión map succ [1, -4, 6, 2, -8], donde succ n = n+1?
+(c) ¿Y la expresión filter esPositivo [1, -4, 6, 2, -8]?
+
+(a) La función map permite transformar los elementos de una lista y devolver una lista nueva con los valores transformados. Es decir, 
+map f xs aplica f a cada elemento de xs. El tipo de dicha función es map :: (a -> b) -> [a] -> [b]
+Por otra parte, la función filter se encarga de, como su nombre lo indica, filtrar aquellos elementos de una lista que satisfacen el 
+predicado en una nueva lista. El tipo de filter es filter :: (a -> Bool) -> [a] ->[a]
+(b) La expresión map succ devuelve una lista compuesta por el siguiente número (n+1) de cada elemento.
+(c) La expresión filter esPositivo se encarga de devolver una lista nueva compuesta solamente por los 
+elementos que sean mayores a cero.
+-}
+
+
 {- [8] Programá una función que dada una lista de números xs, devuelve la lista que resulta de duplicar cada valor de xs.
 (a) Definila usando recursión. -}
 duplicaA :: [Int] -> [Int]
 duplicaA [] = []
 duplicaA (x:xs) = 2*x : duplicaA xs
 
+{- (b) Definila utilizando la función map. -}
 porDos :: Int -> Int
 porDos x = x*2
 
-{- (b) Definila utilizando la función map. -}
 duplicaB :: [Int] -> [Int]
 duplicaB [] = []
 duplicaB (x:xs) = map porDos (x:xs)
